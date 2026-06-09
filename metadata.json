@@ -1,0 +1,6 @@
+{
+  "name": "The Newlist Foundation",
+  "description": "A clean, modern, and responsive website for The Newlist Foundation, built strictly according to the official sitemap and brand identity system.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

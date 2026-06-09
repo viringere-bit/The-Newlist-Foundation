@@ -1,0 +1,263 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Source+Sans+3:ital,wght@0,300..900;1,300..900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-ui: "Source Sans 3", sans-serif;
+
+  /* Redesigned professional authentic high-contrast palette */
+  --color-brand-orange: #D66C3E;       /* Original true Terracotta from Logo, stunningly warm */
+  --color-brand-cream: #FFFDFB;        /* High-luminosity pristine ivory cream */
+  --color-brand-indigo: #111E2B;       /* Deep rich Coal-Navy designed for ultimate, sharp header contrast */
+  --color-brand-midnight: #F9F8F5;     /* Cozy, warm architectural off-white background to prevent screen glare */
+  --color-brand-teal: #14596A;         /* Deep Organic Teal - maximum AA contrast level on light backgrounds */
+  --color-brand-teal-light: #F0F5F6;   /* Soft, high-contrast sea-spray light backplane */
+  --color-brand-slate: #4A5764;        /* Soft visual slate-gray for clear secondary copy */
+  --color-brand-slate-light: #FFFFFF;  /* Brilliantly clean crisp white container backplanes */
+  --color-brand-slate-dark: #22303E;   /* Super-readable dark slate for primary body copy blocks */
+  --color-brand-slate-pale: #DAE1E6;   /* Soft, clean hairline divider with high definition */
+  --color-brand-charcoal: #0B131B;     /* Crisp rich charcoal accent */
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--color-brand-slate-dark);
+  background-color: var(--color-brand-midnight); /* Sparkling clean slate-white background */
+  position: relative;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, .heading-serif {
+  font-family: var(--font-serif);
+}
+
+.font-ui-style {
+  font-family: var(--font-ui);
+}
+
+/* Interconnected network background grid & nodes - calibrated for light theme bg */
+.bg-mesh-grid {
+  background-image: 
+    radial-gradient(circle at 1px 1px, rgba(22, 44, 78, 0.08) 1.5px, transparent 0),
+    linear-gradient(to right, rgba(22, 44, 78, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(22, 44, 78, 0.03) 1px, transparent 1px);
+  background-size: 24px 24px, 48px 48px, 48px 48px;
+}
+
+.bg-mesh-soft {
+  background-image: 
+    radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.45) 0%, transparent 70%),
+    radial-gradient(circle at 10% 20%, rgba(223, 87, 38, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 90% 80%, rgba(31, 108, 128, 0.06) 0%, transparent 50%);
+}
+
+/* Premium micro-borders that resemble modular nodes and physical connections on soft blue light background */
+.border-modular {
+  border: 1px solid var(--color-brand-slate-pale);
+  background-color: rgba(255, 255, 255, 0.65) !important;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 10px 30px -5px rgba(22, 44, 78, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+.border-modular-interactive {
+  border: 1px solid var(--color-brand-slate-pale);
+  background-color: rgba(255, 255, 255, 0.65) !important;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 8px 24px -4px rgba(22, 44, 78, 0.05), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.border-modular-interactive:hover {
+  border-color: var(--color-brand-teal);
+  background-color: rgba(255, 255, 255, 0.85) !important;
+  box-shadow: 0 20px 40px -8px rgba(22, 44, 78, 0.09), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  transform: translateY(-3px) scale(1.005);
+}
+
+/* Circular glowing pulse visualizer */
+.node-pulse {
+  position: relative;
+}
+.node-pulse::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 1.5px solid var(--color-brand-teal);
+  opacity: 0;
+  animation: pulse-out 2.5s infinite cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes pulse-out {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1.4);
+    opacity: 0;
+  }
+}
+
+/* High-gravity stack spacing rule for continuous clean layouts */
+.gravity-spacing {
+  letter-spacing: -0.015em;
+}
+
+/* Custom professional scrollbars calibrated for our soft blue palette */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-brand-midnight);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-brand-slate-pale);
+  border-radius: 9px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-brand-slate);
+}
+
+/* Custom premium global overrides to unify look, feel, curves, and shapes with deep modern contrast */
+div[class*="bg-[#FAF9F5]"], section[class*="bg-[#FAF9F5]"], main[class*="bg-[#FAF9F5]"] {
+  background-color: #FAF9F5 !important;
+  backdrop-filter: none;
+  border: 1px solid rgba(15, 29, 51, 0.1) !important;
+}
+div[class*="bg-white"], section[class*="bg-white"], article[class*="bg-white"], form[class*="bg-white"] {
+  background-color: #FFFFFF !important;
+  backdrop-filter: none;
+  border: 1px solid rgba(15, 29, 51, 0.08) !important;
+  box-shadow: 0 15px 45px -12px rgba(15, 29, 51, 0.06) !important;
+}
+div[class*="bg-[#FAF9F5]/30"] {
+  background-color: rgba(250, 249, 245, 0.9) !important;
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(15, 29, 51, 0.08) !important;
+}
+div[class*="bg-[#FAF9F5]/40"] {
+  background-color: rgba(250, 249, 245, 0.95) !important;
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(15, 29, 51, 0.08) !important;
+}
+
+/* Elevate headers and typography automatically on light background */
+.text-brand-indigo {
+  color: var(--color-brand-indigo) !important;
+}
+.text-brand-slate-dark {
+  color: var(--color-brand-slate-dark) !important;
+}
+.text-brand-slate {
+  color: var(--color-brand-slate) !important;
+}
+
+/* Enforce smoother premium curves globally on larger containers */
+div[class*="rounded-3xl"], div[class*="rounded-[2rem]"], section[class*="rounded-[2.5rem]"] {
+  border-radius: 2.2rem !important;
+}
+button[class*="rounded-full"], div[class*="rounded-full"] {
+  border-radius: 9999px !important;
+}
+
+/* Make sure forms, inputs and buttons are beautifully readable */
+input, textarea, select {
+  background-color: rgba(255, 255, 255, 0.8) !important;
+  border: 1px solid var(--color-brand-slate-pale) !important;
+  color: var(--color-brand-charcoal) !important;
+}
+input:focus, textarea:focus, select:focus {
+  border-color: var(--color-brand-teal) !important;
+  background-color: #FFFFFF !important;
+  box-shadow: 0 0 0 3px rgba(31, 108, 128, 0.15) !important;
+}
+
+/* Accessibility Mode Styles - Globally increased readability, larger fonts, and deep-black text for robust contrast */
+.accessibility-active {
+  font-size: 112.5% !important; /* Scaled up root base font size */
+}
+
+/* Force dark contrast on text elements */
+.accessibility-active p,
+.accessibility-active span,
+.accessibility-active li,
+.accessibility-active label,
+.accessibility-active select,
+.accessibility-active option {
+  color: #000000 !important;
+  font-weight: 550 !important;
+  line-height: 1.75 !important;
+}
+
+.accessibility-active h1,
+.accessibility-active h2,
+.accessibility-active h3,
+.accessibility-active h4,
+.accessibility-active h5,
+.accessibility-active h6 {
+  color: #000000 !important;
+  font-weight: 900 !important;
+  letter-spacing: normal !important;
+}
+
+.accessibility-active button,
+.accessibility-active a {
+  font-weight: 750 !important;
+  letter-spacing: 0.05em !important;
+}
+
+/* Visual highlights on hover/focus */
+.accessibility-active button:focus,
+.accessibility-active a:focus {
+  outline: 3px solid #D66C3E !important;
+  outline-offset: 2px !important;
+}
+
+/* Ensure secondary slate colors mapped to full black or full indigo */
+.accessibility-active .text-brand-slate,
+.accessibility-active .text-brand-slate-dark,
+.accessibility-active .text-brand-slate-pale {
+  color: #000000 !important;
+}
+
+.accessibility-active .bg-[#FAF9F5],
+.accessibility-active .bg-white {
+  background-color: #FFFFFF !important;
+  border: 1.5px solid #000000 !important;
+}
+
+/* Scale up specific typography patterns */
+.accessibility-active .text-xs {
+  font-size: 0.95rem !important;
+}
+.accessibility-active .text-sm {
+  font-size: 1.05rem !important;
+}
+.accessibility-active .text-base {
+  font-size: 1.25rem !important;
+}
+.accessibility-active .text-lg {
+  font-size: 1.4rem !important;
+}
+.accessibility-active .text-xl {
+  font-size: 1.6rem !important;
+}
+.accessibility-active .text-2xl {
+  font-size: 1.85rem !important;
+}
+.accessibility-active .text-3xl {
+  font-size: 2.2rem !important;
+}
+.accessibility-active .text-4xl {
+  font-size: 2.8rem !important;
+}
+
+/* High contrast outline support for buttons */
+.accessibility-active .bg-brand-orange,
+.accessibility-active .bg-brand-indigo,
+.accessibility-active .bg-brand-teal {
+  border: 2px solid #000000 !important;
+}
